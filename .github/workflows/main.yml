@@ -21,12 +21,12 @@ jobs:
       - name: Install dependencies
         run: pipenv install
 
-  tests:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Run test
-        run: pipenv run pytest test.py
+#  tests:
+#    needs: build
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: Run test
+#        run: pipenv run pytest test.py
 
   deploy:
     needs: tests
