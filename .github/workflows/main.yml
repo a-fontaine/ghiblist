@@ -32,7 +32,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Run test
-      - uses: pytest test.py
+        run: pytest test.py
   deploy:
     runs-on: ubuntu-latest
     steps:
