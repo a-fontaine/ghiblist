@@ -10,10 +10,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Setup apt
-        run: apt update && apt install
+        run: sudo apt update && sudo apt install
 
       - name: Setup Python
-        run: apt install python3.8
+        run: sudo apt install python3.8
 
       - name: Install pipenv
         run: pip install pipenv
