@@ -26,7 +26,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Run test
-        run: pytest test.py
+        run: pipenv run pytest test.py
 
   deploy:
     needs: tests
