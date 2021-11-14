@@ -16,7 +16,7 @@ jobs:
         run: sudo apt install python3.8
 
       - name: Install pipenv
-        run: pip install pipenv
+        run: sudo pip install pipenv
 
       - name: Install dependencies
         run: pipenv install
