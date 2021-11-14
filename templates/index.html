@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Ghibli Studio Films</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1 class="page-title">Ghibli Studio Films</h1>
+    <p class="page-intro">
+        Find the next Ghlibli film you will watch !
+        <br>
+        (this film list is provided by <a href="https://ghibliapi.herokuapp.com">https://ghibliapi.herokuapp.com</a>)
+    </p>
+    <ul class="film-list">
+        {% for film in films %}
+            <li class="film">
+                <h2 class="title">{{ film['title'] }}</h2>
+                <p class="original-title">{{ film['original_title'] }}</p>
+                <p class="release-date">{{ film['release_date'] }}</p>
+                <img class="image" src="{{ film['image'] }}">
+                <p class="description">{{ film['description'] }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
