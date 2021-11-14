@@ -16,17 +16,17 @@ jobs:
         run: sudo apt install python3.8
 
       - name: Install pipenv
-        run: sudo -H pip install -U pipenv
+        run: pip install pipenv
 
       - name: Install dependencies
-        run: sudo pipenv install
+        run: pipenv install
 
   tests:
     needs: build
     runs-on: ubuntu-latest
     steps:
       - name: Run test
-        run: sudo pipenv run pytest test.py
+        run: pipenv run pytest test.py
 
   deploy:
     needs: tests
