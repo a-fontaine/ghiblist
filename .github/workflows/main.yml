@@ -29,15 +29,14 @@ jobs:
         run: |
           touch Pipfile && pipenv install --deploy --dev
 
-#  tests:
-#   needs: build
-#   runs-on: ubuntu-latest
-#   steps:
-#    - name: Run test
-#       run: pipenv run pytest test.py
+  tests:
+   needs: build
+   runs-on: ubuntu-latest
+   steps:
+    - name: Run test
+      run: pipenv run pytest test.py
 
   deploy:
-    #needs: tests
     needs: build
     runs-on: ubuntu-latest
     steps:
