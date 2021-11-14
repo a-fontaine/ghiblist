@@ -22,12 +22,14 @@ jobs:
         run: pipenv install
 
   tests:
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - name: Run test
         run: pytest test.py
 
   deploy:
+    needs: tests
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
